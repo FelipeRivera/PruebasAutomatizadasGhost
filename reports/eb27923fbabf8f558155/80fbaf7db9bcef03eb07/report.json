@@ -1,0 +1,181 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "crear-una-nueva-publicación-de-blog;como-usuario,-quiero-crear-una-nueva-publicación-de-blog",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Como usuario, quiero crear una nueva publicación de blog",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 4975000000,
+              "error_message": "Error: Couldn't find executable for browser\n    at launchBrowser (/Users/feliperivera/node_modules/devtools/build/launcher.js:142:15)\n    at launch (/Users/feliperivera/node_modules/devtools/build/launcher.js:183:16)\n    at Function.newSession (/Users/feliperivera/node_modules/devtools/build/index.js:54:54)\n    at Object.remote (/Users/feliperivera/node_modules/webdriverio/build/index.js:77:43)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to page \"https://ghost-3llp.onrender.com/ghost/#/signin\"",
+            "match": {
+              "location": "../../node_modules/kraken-node/lib/steps/web.js:41"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter email \"testerJunior@gmail.com\"",
+            "match": {
+              "location": "features/web/step_definitions/step.js:3"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I enter password \"#TesterJunior1\"",
+            "match": {
+              "location": "features/web/step_definitions/step.js:8"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click next",
+            "match": {
+              "location": "features/web/step_definitions/step.js:13"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I wait for 5 seconds",
+            "match": {
+              "location": "../../node_modules/kraken-node/lib/steps/both.js:73"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I click on \"New Post\"",
+            "match": {
+              "location": "features/web/step_definitions/step.js:18"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I enter text \"Título de la nueva publicación\" in the title field",
+            "match": {
+              "location": "features/web/step_definitions/step.js:23"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I enter text \"Contenido de la nueva publicación\" in the content field",
+            "match": {
+              "location": "features/web/step_definitions/step.js:28"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I click on \"Publish\"",
+            "match": {
+              "location": "features/web/step_definitions/step.js:18"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I verify that the post is published",
+            "match": {
+              "location": "features/web/step_definitions/step.js:33"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 3000000,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'deleteSession')\n    at WebClient.<anonymous> (/Users/feliperivera/node_modules/kraken-node/lib/clients/WebClient.js:109:59)\n    at step (/Users/feliperivera/node_modules/kraken-node/lib/clients/WebClient.js:59:23)\n    at Object.next (/Users/feliperivera/node_modules/kraken-node/lib/clients/WebClient.js:40:53)\n    at /Users/feliperivera/node_modules/kraken-node/lib/clients/WebClient.js:34:71\n    at new Promise (<anonymous>)\n    at __awaiter (/Users/feliperivera/node_modules/kraken-node/lib/clients/WebClient.js:30:12)\n    at WebClient.stop (/Users/feliperivera/node_modules/kraken-node/lib/clients/WebClient.js:104:16)\n    at WebClient.<anonymous> (/Users/feliperivera/node_modules/kraken-node/lib/clients/Client.js:109:51)\n    at step (/Users/feliperivera/node_modules/kraken-node/lib/clients/Client.js:67:23)\n    at Object.next (/Users/feliperivera/node_modules/kraken-node/lib/clients/Client.js:48:53)\n    at fulfilled (/Users/feliperivera/node_modules/kraken-node/lib/clients/Client.js:39:58)"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@user1",
+            "line": 3
+          },
+          {
+            "name": "@web",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "crear-una-nueva-publicación-de-blog",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Crear una nueva publicación de blog",
+    "tags": [],
+    "uri": "features/my_first.feature"
+  }
+]

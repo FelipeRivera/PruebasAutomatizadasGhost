@@ -292,3 +292,58 @@ Then('I verify that a confirmation modal exists', async function () {
         throw new Error('No se encontró un <div> con la clase "modal-content".');
     }
 });
+
+When('I click on view site', async function () {
+    const element = await this.driver.$('a[href="#/site/"]');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+});
+
+When('I click on pages', async function () {
+    const element = await this.driver.$('a[href="#/pages/"]');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+});
+
+When('I click on new page', async function () {
+    const element = await this.driver.$('span=New page');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+});
+
+When('I enter page title {string} in the content field', async function (content) {
+    const element = await this.driver.$('input[placeholder="Page title"], textarea[placeholder="Page title"]');
+    await element.waitForDisplayed();
+    await element.setValue(content);
+});
+
+When('I enter page content {string} in the content field', async function (content) {
+    const element = await this.driver.$('.koenig-editor__editor.__mobiledoc-editor.__has-no-content');
+    await element.waitForDisplayed();
+    await element.setValue(content);
+});
+
+When('I click publish page, right now', async function () {
+    const element = await this.driver.$('span=Publish page, right now');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+});
+
+Then('I verify that a page with name {string} exists', async function (content) {
+    const elements = await this.driver.$$('h3.gh-content-entry-title');
+    let found = false;
+    for (const element of elements) {
+        const text = await element.getText();
+        if (text.trim() === content) {
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        throw new Error(`No se encontró un <h3> con la clase 'gh-content-entry-title' y el texto '${content}'.`);
+    }
+});

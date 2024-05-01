@@ -105,3 +105,39 @@ Scenario: Como usuario, quiero crear un post, y si no me gusta eliminarlo.
   Then I verify that a confirmation modal exists
   When I click on Delete
   Then I verify that a post with text "Nueva publicación eliminar" does not exist
+
+@user6 @web
+Scenario: Como usuario, quiero crear un post y verlo reflejado en el view site
+  Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
+  When I enter email "testerJunior@gmail.com"
+  And I enter password "testerjunior1"
+  And I click login
+  And I click on posts
+  And I click on new post
+  And I enter post title "Nueva publicación site" in the content field
+  And I enter post content "contenido de la nueva publicación site" in the content field
+  And I click publish
+  And I click continue, final review
+  And I click publish post, right now
+  And I click Back to editor
+  And I click on posts
+  And I click on view site
+  And I click on posts
+  Then I verify that a post with text "Nueva publicación site" exists
+
+@user7 @web
+Scenario: Como usuario, quiero crear una page
+  Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
+  When I enter email "testerJunior@gmail.com"
+  And I enter password "testerjunior1"
+  And I click login
+  And I click on pages
+  And I click on new page
+  And I enter page title "My page" in the content field
+  And I enter page content "My content page" in the content field
+  And I click publish
+  And I click continue, final review
+  And I click publish page, right now
+  And I click Back to editor
+  And I click on pages
+  Then I verify that a page with name "My page" exists

@@ -347,3 +347,109 @@ Then('I verify that a page with name {string} exists', async function (content) 
         throw new Error(`No se encontró un <h3> con la clase 'gh-content-entry-title' y el texto '${content}'.`);
     }
 });
+
+When('I click on the page options element', async function () {
+    const element = await this.driver.$('svg[fill="none"][viewBox="0 0 24 24"] path[d="M21 2.5H3c-.828 0-1.5.608-1.5 1.357v16.286c0 .75.672 1.357 1.5 1.357h18c.828 0 1.5-.608 1.5-1.357V3.857c0-.75-.672-1.357-1.5-1.357zm-4.5 0v19"]');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+});
+
+When('I click on a page with name {string}', async function (content) {
+    const elements = await this.driver.$$('h3.gh-content-entry-title');
+    let found = false;
+    for (const element of elements) {
+        await element.waitForDisplayed();
+        const text = await element.getText();
+        if (text === content) {
+            found = true;
+            element.click();
+            break;
+        }
+    }
+    if (!found) {
+        throw new Error(`No se encontró un <h3> con la clase 'gh-content-entry-title' y el texto '${content}'.`);
+    }
+});
+
+When('I scroll to the delete page button and click it', async function () {
+    const button = await this.driver.$('.gh-btn.gh-btn-hover-red.gh-btn-icon.settings-menu-delete-button');
+    await button.scrollIntoView();
+    await button.waitForDisplayed();
+    await button.waitForClickable();
+    await button.click();
+});
+
+Then('I verify that a page with text {string} does not exist', async function (content) {
+    const elements = await this.driver.$$('h3.gh-content-entry-title');
+    for (const element of elements) {
+        await element.waitForDisplayed();
+        const text = await element.getText();
+        if (text.trim() === content) {
+            throw new Error(`Se encontró un <h3> con la clase 'gh-content-entry-title' y el texto '${content}', pero no debería existir.`);
+        }
+    }
+});
+
+When('I click on drafts', async function () {
+    const element = await this.driver.$('//span[@class="gh-nav-viewname" and text()="Drafts"]');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+});
+
+When('I enter draft title {string} in the content field', async function (content) {
+    const element = await this.driver.$('input[placeholder="Post title"], textarea[placeholder="Post title"]');
+    await element.waitForDisplayed();
+    await element.setValue(content);
+});
+
+When('I enter draft content {string} in the content field', async function (content) {
+    const element = await this.driver.$('.koenig-editor__editor.__mobiledoc-editor.__has-no-content');
+    await element.waitForDisplayed();
+    await element.setValue(content);
+});
+
+When('I click on show list', async function () {
+    const element = await this.driver.$('button.gh-nav-button-expand[aria-label="Expand custom post types"]');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+});
+
+When('I click on back to posts', async function () {
+    const element = await this.driver.$('svg[viewBox="0 0 16 16"]');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+});
+
+Then('I verify that a draft with name {string} exists', async function (content) {
+    const elements = await this.driver.$$('h3.gh-content-entry-title');
+    let found = false;
+    for (const element of elements) {
+        await element.waitForDisplayed();
+        const text = await element.getText();
+        if (text === content) {
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        throw new Error(`No se encontró un <h3> con la clase 'gh-content-entry-title' y el texto '${content}'.`);
+    }
+});
+
+When('I click on search', async function () {
+    const element = await this.driver.$('svg[viewBox="0 0 24 24"]');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+});
+
+When('I write {string} and press Enter in the search input', async function (content) {
+    const input = await this.driver.$('input.gh-input-with-select-input');
+    await input.waitForDisplayed();
+    await input.setValue(content);
+    await input.keys('Enter');
+});

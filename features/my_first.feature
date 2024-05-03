@@ -1,7 +1,7 @@
 Feature: Validacion funcionalidades Ghost
 
 @user1 @web
-Scenario: Como usuario, quiero crear una nueva publicación de blog en la aplicación y verificar que se refleja en el listado exitosamente
+Scenario: ES1 Como usuario, quiero crear una nueva publicación de blog en la aplicación y verificar que se refleja en el listado exitosamente
   Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
   When I enter email "testerJunior@gmail.com"
   And I enter password "testerjunior1"
@@ -21,7 +21,7 @@ Scenario: Como usuario, quiero crear una nueva publicación de blog en la aplica
   Then I verify that a post with text "titulo de la nueva publicación" exists
 
 @user2 @web
-Scenario: Como usuario, quiero crear una nueva etiqueta en la aplicación y verificar que se refleja el cambio en el listado exitosamente
+Scenario: ES2 Como usuario, quiero crear una nueva etiqueta en la aplicación y verificar que se refleja el cambio en el listado exitosamente
   Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
   When I enter email "testerJunior@gmail.com"
   And I enter password "testerjunior1"
@@ -35,7 +35,7 @@ Scenario: Como usuario, quiero crear una nueva etiqueta en la aplicación y veri
   Then I verify that an element tag with text "Nueva Etiqueta" exists
 
 @user3 @web
-Scenario: Como usuario, quiero crear una nueva etiqueta y un nuevo post en la aplicación y ademas agregar mi etiqueta al post
+Scenario: ES3 Como usuario, quiero crear una nueva etiqueta y un nuevo post en la aplicación y ademas agregar mi etiqueta al post
   Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
   When I enter email "testerJunior@gmail.com"
   And I enter password "testerjunior1"
@@ -65,7 +65,7 @@ Scenario: Como usuario, quiero crear una nueva etiqueta y un nuevo post en la ap
   Then I verify that an update notification exist
 
 @user4 @web
-Scenario: Como usuario, quiero crear una nueva etiqueta en la aplicación,  verificar que se refleja el cambio en el listado y si no me gusta, poder eliminar la etiqueta
+Scenario: ES4 Como usuario, quiero crear una nueva etiqueta en la aplicación,  verificar que se refleja el cambio en el listado y si no me gusta, poder eliminar la etiqueta
   Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
   When I enter email "testerJunior@gmail.com"
   And I enter password "testerjunior1"
@@ -84,7 +84,7 @@ Scenario: Como usuario, quiero crear una nueva etiqueta en la aplicación,  veri
   Then I verify that an element tag with text "Nueva Etiqueta eliminar" does not exist
 
 @user5 @web
-Scenario: Como usuario, quiero crear un post en la aplicación, verificar el cambio en el listado y si no me gusta eliminarlo. 
+Scenario: ES5 Como usuario, quiero crear un post en la aplicación, verificar el cambio en el listado y si no me gusta eliminarlo. 
   Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
   When I enter email "testerJunior@gmail.com"
   And I enter password "testerjunior1"
@@ -107,7 +107,7 @@ Scenario: Como usuario, quiero crear un post en la aplicación, verificar el cam
   Then I verify that a post with text "Nueva publicación eliminar" does not exist
 
 @user6 @web
-Scenario: Como usuario, quiero crear un post  en la aplicación y ademas verlo reflejado en el view site
+Scenario: ES6 Como usuario, quiero crear un post  en la aplicación y ademas verlo reflejado en el view site
   Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
   When I enter email "testerJunior@gmail.com"
   And I enter password "testerjunior1"
@@ -126,7 +126,7 @@ Scenario: Como usuario, quiero crear un post  en la aplicación y ademas verlo r
   Then I verify that a post with text "Nueva publicación site" exists
 
 @user7 @web
-Scenario: Como usuario, quiero crear una page en la aplicación y ademas verificar el cambio en el listado
+Scenario: ES7 Como usuario, quiero crear una page en la aplicación y ademas verificar el cambio en el listado
   Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
   When I enter email "testerJunior@gmail.com"
   And I enter password "testerjunior1"
@@ -143,7 +143,7 @@ Scenario: Como usuario, quiero crear una page en la aplicación y ademas verific
   Then I verify that a page with name "My page" exists
 
 @user8 @web
-Scenario: Como usuario, quiero crear una page en la aplicacion, verificar el cambio en el listado y ademas poder eliminarla si se desea
+Scenario: ES8 Como usuario, quiero crear una page en la aplicacion, verificar el cambio en el listado y ademas poder eliminarla si se desea
   Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
   When I enter email "testerJunior@gmail.com"
   And I enter password "testerjunior1"
@@ -166,7 +166,7 @@ Scenario: Como usuario, quiero crear una page en la aplicacion, verificar el cam
   Then I verify that a page with text "My page eliminar" does not exist
 
 @user9 @web
-Scenario: Como usuario, quiero crear un draft  en la aplicación y verificar que existe una actualización en el listado
+Scenario: ES9 Como usuario, quiero crear un draft  en la aplicación y verificar que existe una actualización en el listado
   Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
   When I enter email "testerJunior@gmail.com"
   And I enter password "testerjunior1"
@@ -186,7 +186,7 @@ Scenario: Como usuario, quiero crear un draft  en la aplicación y verificar que
   Then I verify that a draft with name "New draft" exists
 
 @user10 @web
-Scenario: Como usuario, quiero crear un post  en la aplicación y buscarlo en la barra de búsqueda 
+Scenario: ES10 Como usuario, quiero crear un post  en la aplicación y buscarlo en la barra de búsqueda 
   Given I navigate to page "https://ghost-3llp.onrender.com/ghost/#/signin"
   When I enter email "testerJunior@gmail.com"
   And I enter password "testerjunior1"

@@ -1,5 +1,7 @@
 # PruebasAutomatizadasGhost
 
+Estas pruebas fueron creadas y ejecutadas en un Mac book pro 1,4 Quad-core Intel con OS Sonoma 14.3.
+
 Este repositorio contiene pruebas automatizadas para la aplicación Ghost, implementadas con Kraken. Incluye los siguientes 10 escenarios de prueba:
 
     Creación y verificación de nueva publicación de blog: El usuario crea una nueva publicación de blog en la aplicación y verifica que se refleja correctamente en el listado.

@@ -22,4 +22,23 @@ Este repositorio contiene pruebas automatizadas para la aplicación Ghost, imple
 
     Creación de post y búsqueda: El usuario crea un nuevo post y luego lo busca en la barra de búsqueda.
 
-Para ejecutar el proyecto, debes instalar Kraken y usar Node.js versión 16. Si la instalación de Kraken es correcta, todo debería funcionar sin problemas.
+Integrantes: 
+Felipe Rivera -> yf.rivera1851@uniandes.edu.co
+Juan Pablo Camacho -> jp.camacho10@uniandes.edu.co
+
+# Correr el proyecto!
+Instalación de Node.js:
+Se requiere Node.js versión 16!
+    Puedes instalar Node.js usando Homebrew.
+    En la terminal, ejecuta el siguiente comando:
+    brew install node@16
+
+Instalación de Kraken:
+    Para ejecutar el proyecto, debes instalar Kraken.
+    En la terminal, ejecuta el siguiente comando:
+    npm install kraken-node -g
+
+Ejecución de los escenarios de prueba:
+    Para ejecutar los escenarios de prueba, ve al directorio raíz del proyecto.
+    Desde allí, ejecuta el siguiente comando:
+    ./node_modules/kraken-node/bin/kraken-node run

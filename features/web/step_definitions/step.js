@@ -520,3 +520,59 @@ async function takeScreenshot(driver, stepName) {
     fs.writeFileSync(filePath, screenshot, 'base64');
     console.log(`Screenshot saved: ${filePath}`);
 }
+
+// Implementation for testing Ghost 3.42.4
+
+When('I click login 3.42', async function () {
+    const element = await this.driver.$('#ember12');
+    await element.waitForDisplayed();
+    await element.click();
+    await takeScreenshot(this.driver, 'click_login');
+});
+
+When('I enter post title {string} in the content field 3.42', async function (content) {
+    const element = await this.driver.$('input[placeholder="Post Title"], textarea[placeholder="Post Title"]');
+    await element.waitForDisplayed();
+    await element.setValue(content);
+    await takeScreenshot(this.driver, 'enter_post_title');
+});
+
+When('I confirm publish 3.42', async function () {
+    const element = await this.driver.$('button.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+    await takeScreenshot(this.driver, 'click_publish_post');
+});
+
+When('I click on new post 3.42', async function () {
+    const element = await this.driver.$('span=New post');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+    await takeScreenshot(this.driver, 'click_new_post');
+});
+
+When('I click on the post options element 3.42', async function () {
+    const element = await this.driver.$('svg[viewBox="0 0 24 24"]');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+    await takeScreenshot(this.driver, 'click_post_options');
+});
+
+When('I click on close options element 3.42', async function () {
+    const element = await this.driver.$('button[aria-label="Close"]');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+    await takeScreenshot(this.driver, 'click_post_options');
+});
+
+When('I click on Update 3.42', async function () {
+    const element = await this.driver.$('//div[contains(@class, "gh-publishmenu-trigger")]//span[text()="Update"]');
+    await element.waitForDisplayed();
+    await element.waitForClickable();
+    await element.click();
+    await takeScreenshot(this.driver, 'click_on_update');
+});

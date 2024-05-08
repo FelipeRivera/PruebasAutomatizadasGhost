@@ -1,5 +1,7 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
+const ghostVersion = '5.80'
+
 When('I enter email {string}', async function (email) {
     const element = await this.driver.$('input[name="identification"]');
     await element.waitForDisplayed();
@@ -512,7 +514,7 @@ const path = require('path');
 async function takeScreenshot(driver, stepName) {
     const screenshot = await driver.takeScreenshot();
     const rootDir = process.cwd();
-    const screenshotsDir = path.join(rootDir, 'screenshots');
+    const screenshotsDir = path.join(rootDir, 'screenshots_' + ghostVersion);
     if (!fs.existsSync(screenshotsDir)) {
         fs.mkdirSync(screenshotsDir);
     }

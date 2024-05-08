@@ -206,7 +206,7 @@ Scenario: ES10 Como usuario, quiero crear un post  en la aplicación y buscarlo 
   And I write "Nueva" and press Enter in the search input
 
   @user11 @web
-Scenario: ES1 Como usuario, quiero crear una nueva publicación de blog en la aplicación y verificar que se refleja en el listado exitosamente
+Scenario: ESv1 Como usuario, quiero crear una nueva publicación de blog en la aplicación y verificar que se refleja en el listado exitosamente
   Given I navigate to page "https://ghostv3-ftb8.onrender.com/ghost/#/signin"
   When I enter email "tester@gmail.com"
   And I enter password "testerJunior123"
@@ -222,7 +222,7 @@ Scenario: ES1 Como usuario, quiero crear una nueva publicación de blog en la ap
   Then I verify that a post with text "titulo de la nueva publicación" exists
 
 @user12 @web
-Scenario: ES2 Como usuario, quiero crear una nueva etiqueta en la aplicación y verificar que se refleja el cambio en el listado exitosamente
+Scenario: ESv2 Como usuario, quiero crear una nueva etiqueta en la aplicación y verificar que se refleja el cambio en el listado exitosamente
   Given I navigate to page "https://ghostv3-ftb8.onrender.com/ghost/#/signin"
   When I enter email "tester@gmail.com"
   And I enter password "testerJunior123"
@@ -236,7 +236,7 @@ Scenario: ES2 Como usuario, quiero crear una nueva etiqueta en la aplicación y 
   Then I verify that an element tag with text "Nueva Etiqueta" exists
 
 @user13 @web
-Scenario: ES3 Como usuario, quiero crear una nueva etiqueta y un nuevo post en la aplicación y ademas agregar mi etiqueta al post
+Scenario: ESv3 Como usuario, quiero crear una nueva etiqueta y un nuevo post en la aplicación y ademas agregar mi etiqueta al post
   Given I navigate to page "https://ghostv3-ftb8.onrender.com/ghost/#/signin"
   When I enter email "tester@gmail.com"
   And I enter password "testerJunior123"
@@ -267,7 +267,7 @@ Scenario: ES3 Como usuario, quiero crear una nueva etiqueta y un nuevo post en l
   Then I verify that an update notification exist
 
 @user14 @web
-Scenario: ES4 Como usuario, quiero crear una nueva etiqueta en la aplicación,  verificar que se refleja el cambio en el listado y si no me gusta, poder eliminar la etiqueta
+Scenario: ESv4 Como usuario, quiero crear una nueva etiqueta en la aplicación,  verificar que se refleja el cambio en el listado y si no me gusta, poder eliminar la etiqueta
   Given I navigate to page "https://ghostv3-ftb8.onrender.com/ghost/#/signin"
   When I enter email "tester@gmail.com"
   And I enter password "testerJunior123"
@@ -286,7 +286,7 @@ Scenario: ES4 Como usuario, quiero crear una nueva etiqueta en la aplicación,  
   Then I verify that an element tag with text "Nueva Etiqueta eliminar" does not exist
 
 @user15 @web
-Scenario: ES5 Como usuario, quiero crear un post en la aplicación, verificar el cambio en el listado y si no me gusta eliminarlo. 
+Scenario: ESv5 Como usuario, quiero crear un post en la aplicación, verificar el cambio en el listado y si no me gusta eliminarlo. 
   Given I navigate to page "https://ghostv3-ftb8.onrender.com/ghost/#/signin"
   When I enter email "tester@gmail.com"
   And I enter password "testerJunior123"

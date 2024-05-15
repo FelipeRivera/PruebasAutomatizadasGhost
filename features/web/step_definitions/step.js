@@ -531,6 +531,59 @@ async function takeScreenshot(driver, stepName) {
     console.log(`Screenshot saved: ${filePath}`);
 }
 
+const https = require('https');
+
+// A-priori Data
+const url = 'https://my.api.mockaroo.com/kraken.json?key=db3b3f50';
+const filePath = path.join(process.cwd(), 'properties.json');
+
+function fetchJsonFromUrl(url) {
+    return new Promise((resolve, reject) => {
+        https.get(url, (response) => {
+            let data = '';
+            response.on('data', (chunk) => {
+                data += chunk;
+            });
+            response.on('end', () => {
+                try {
+                    const jsonData = JSON.parse(data);
+                    resolve(jsonData);
+                } catch (error) {
+                    reject('Error parsing JSON data: ' + error.message);
+                }
+            });
+        }).on('error', (error) => {
+            reject('Error fetching data: ' + error.message);
+        });
+    });
+}
+
+async function updatePropertiesFile() {
+    try {
+        const newData = await fetchJsonFromUrl(url);
+        let existingData;
+        try {
+            const fileContent = fs.readFileSync(filePath, 'utf8');
+            existingData = JSON.parse(fileContent);
+        } catch (error) {
+            throw new Error('Error reading properties.json file: ' + error.message);
+        }
+        for (const key in newData) {
+            if (newData.hasOwnProperty(key)) {
+                existingData[key] = newData[key];
+            }
+        }
+        fs.writeFileSync(filePath, JSON.stringify(existingData, null, 2));
+        console.log('Data successfully updated in properties.json.');
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
+}
+
+Given('I fetch the testing data', async function () {
+    await updatePropertiesFile();
+});
+
 // Implementation for testing Ghost 3.42.4
 
 When('I click login 3.42', async function () {

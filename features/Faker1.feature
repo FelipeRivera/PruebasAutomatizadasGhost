@@ -46,11 +46,11 @@ Scenario: ES3 Como usuario, quiero crear una nueva etiqueta y un nuevo post en l
   And I click login
   And I click on tags
   And I click on new tag
-  And I enter tag name "$string_6"
+  And I enter tag name "$string_1"
   And I enter tag description "$string_7"
   And I click on save
   And I click on tags
-  Then I verify that an element tag with text "$$string_6" exists
+  Then I verify that an element tag with text "$$string_1" exists
   When I click on posts
   And I click on new post
   And I enter post title "$string_8" in the content field
@@ -64,7 +64,7 @@ Scenario: ES3 Como usuario, quiero crear una nueva etiqueta y un nuevo post en l
   When I click on a post with name "$$string_8"
   And I click on the post options element
   And I click on the tags dropdown
-  And I select the tag option with text "$$string_6"
+  And I select the tag option with text "$$string_1"
   And I click on Update
   Then I verify that an update notification exist
 

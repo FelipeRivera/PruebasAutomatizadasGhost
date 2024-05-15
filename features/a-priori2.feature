@@ -2,7 +2,8 @@ Feature: Validacion funcionalidades Ghost 5.80
 
 @user6 @web
 Scenario: ES6 Como usuario, quiero crear un post  en la aplicación y ademas verlo reflejado en el view site
-  Given I navigate to page "<GHOST_5.80>"
+  Given I fetch the testing data
+  And I navigate to page "<GHOST_5.80>"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
   And I click login

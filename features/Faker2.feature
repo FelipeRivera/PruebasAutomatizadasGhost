@@ -31,14 +31,14 @@ Scenario: ES7 Como usuario, quiero crear una page en la aplicación y ademas ver
   And I click login
   And I click on pages
   And I click on new page
-  And I enter page title "$string_3" in the content field
+  And I enter page title "$string_5" in the content field
   And I enter page content "$string_4" in the content field
   And I click publish
   And I click continue, final review
   And I click publish page, right now
   And I click Back to editor
   And I click on pages
-  Then I verify that a page with name "$$string_3" exists
+  Then I verify that a page with name "$$string_5" exists
 
 @user8 @web
 Scenario: ES8 Como usuario, quiero crear una page en la aplicacion, verificar el cambio en el listado y ademas poder eliminarla si se desea

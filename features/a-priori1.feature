@@ -2,7 +2,8 @@ Feature: Validacion funcionalidades Ghost 5.80
 
 @user1 @web
 Scenario: ES1 Como usuario, quiero crear una nueva publicación de blog en la aplicación y verificar que se refleja en el listado exitosamente
-  Given I navigate to page "<GHOST_5.80>"
+  Given I fetch the testing data
+  And I navigate to page "<GHOST_5.80>"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
   And I click login

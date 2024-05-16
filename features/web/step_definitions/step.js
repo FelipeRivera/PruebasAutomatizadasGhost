@@ -534,7 +534,6 @@ async function takeScreenshot(driver, stepName) {
 const https = require('https');
 
 // A-priori Data
-const url = 'https://my.api.mockaroo.com/kraken.json?key=db3b3f50';
 const filePath = path.join(process.cwd(), 'properties.json');
 
 function fetchJsonFromUrl(url) {
@@ -558,7 +557,7 @@ function fetchJsonFromUrl(url) {
     });
 }
 
-async function updatePropertiesFile() {
+async function updatePropertiesFile(url) {
     try {
         const newData = await fetchJsonFromUrl(url);
         let existingData;
@@ -580,8 +579,8 @@ async function updatePropertiesFile() {
     }
 }
 
-Given('I fetch the testing data', async function () {
-    await updatePropertiesFile();
+Given('I fetch the testing data {kraken-string}', async function (url) {
+    await updatePropertiesFile(url);
 });
 
 // Implementation for testing Ghost 3.42.4

@@ -44,3 +44,17 @@ Ejecución de los escenarios de prueba:
     Para ejecutar los escenarios de prueba, ve al directorio raíz del proyecto.
     Desde allí, ejecuta el siguiente comando:
     ./node_modules/kraken-node/bin/kraken-node run
+
+
+# Correr Escenarios!
+El proyecto cuenta con 6 features, 2 por cada estrategia. Si desea ejecutar todos los features, puede usar el siguiente comando:
+./node_modules/kraken-node/bin/kraken-node run
+
+Sin embargo, estos escenarios utilizan datos diseñados para que la aplicación falle, lo cual puede interrumpir la ejecución. Para evitar esto, 
+le recomendamos eliminar la extensión .feature de los 5 features restantes y ejecutar cada uno por separado para analizar los resultados.
+
+Tambien, si funciona, puede utilizar este comando para correr un feature por separado:
+./node_modules/kraken-node/bin/kraken-node run --feature [nombre_del_feature]
+
+Muchas gracias y perdon las molestias. 
+

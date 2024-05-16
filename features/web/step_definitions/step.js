@@ -532,8 +532,6 @@ async function takeScreenshot(driver, stepName) {
 }
 
 const https = require('https');
-
-// A-priori Data
 const filePath = path.join(process.cwd(), 'properties.json');
 
 function fetchJsonFromUrl(url) {
